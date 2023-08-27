@@ -10,7 +10,7 @@
 // Logger definitions
 static std::string LOG_NAME{ "yoshimi.log"},
     LOG_DIR{"/var/log"};
-
+xzcz
 // File definitions
 static std::string MANUFACTURER_FILE{"/usr/share/nmap/nmap-mac-prefixes"},
             HOST_CACHE_FILE{"host_cache"},
