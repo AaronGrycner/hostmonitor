@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25.2)
+cmake_minimum_required(VERSION 3.22.1)
 project(YoshimiWRT)
 
 set(CMAKE_CXX_STANDARD 23)
@@ -17,9 +17,3 @@ add_executable(YoshimiWRT main.cpp
         include/Test.h
         include/Exceptions.h
 )
-
-find_package(asio CONFIG REQUIRED)
-target_link_libraries(YoshimiWRT PRIVATE asio::asio)
-
-find_package(libtins CONFIG REQUIRED)
-target_link_libraries(YoshimiWRT PRIVATE tins)
