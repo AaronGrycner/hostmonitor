@@ -19,7 +19,7 @@ void init_files() {
     // create log directory if it doesn't exist
     if (!std::filesystem::exists(LOG_DIR + "/" + LOG_NAME)) {
         if(!Logger::create_log_file()) {
-            throw create_log_dir_error();
+            throw create_log_file_error();
         }
     }
 
@@ -27,7 +27,7 @@ void init_files() {
     if (!std::filesystem::exists(LOG_DIR + "/" + LOG_NAME)) {
         std::ofstream log_file_out(LOG_DIR + "/" + LOG_NAME);
         if (!log_file_out) {
-            throw create_log_file_error();
+            throw create_log_dir_error();
         }
     }
 

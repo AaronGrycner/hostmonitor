@@ -21,4 +21,8 @@ static const char  *SHARED_MUTEX_NAME{"host_mutex"},
             *SHARED_MEMORY_NAME{"host_shared_memory"},
             *SHARED_VECTOR_NAME{"host_shared_vector"};
 
+// Network definitions
+const std::string DEFAULT_INTERFACE{"wlan0"};
+
+
 #endif //YOSHIMIWRT_DEFINITIONS_H

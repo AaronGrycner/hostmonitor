@@ -6,9 +6,9 @@ set(CMAKE_CXX_STANDARD 23)
 add_executable(YoshimiWRT main.cpp
         include/Header.h
         include/Host_Monitor.h
-        lib/Host.cpp
+        src/Host.cpp
         include/Host.h
-        lib/Host_Monitor.cpp
+        src/Host_Monitor.cpp
         include/Definitions.h
         include/Logger.h
         include/Network_Utils.h
@@ -16,4 +16,4 @@ add_executable(YoshimiWRT main.cpp
         include/Network.h
         include/Test.h
         include/Exceptions.h
-)
+        include/network_interface.h include/HWAddress.h include/IPv4Address.h)

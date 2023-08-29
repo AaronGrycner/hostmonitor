@@ -6,12 +6,9 @@
 #define YOSHIMIWRT_NETWORK_UTILS_H
 
 #include <vector>
-#include <tins/tins.h>
 #include <ifaddrs.h>
 #include <regex>
 #include <fstream>
-
-using namespace Tins;
 
 namespace Network_Utils {
 

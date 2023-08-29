@@ -6,15 +6,15 @@
 
 #include <utility>
 
-Host::Host(HWAddress<6> mac, IPv4Address ip) :
-mac_address(mac),
-ip_address(ip)
+Host::Host(HWAddress mac, IPv4Address ip) :
+mac_address(std::move(mac)),
+ip_address(std::move(ip))
 {
 }
 
-Host::Host(HWAddress<6> mac, IPv4Address ip, std::string hostname, std::string manufacturer) :
-mac_address(mac),
-ip_address(ip),
+Host::Host(HWAddress mac, IPv4Address ip, std::string hostname, std::string manufacturer) :
+mac_address(std::move(mac)),
+ip_address(std::move(ip)),
 hostname(std::move(hostname)),
 manufacturer(std::move(manufacturer))
 {

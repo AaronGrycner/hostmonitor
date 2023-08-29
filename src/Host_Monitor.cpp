@@ -25,7 +25,9 @@ Host_Monitor::Host_Monitor() {
 
     // read output
     while (fgets(buf, sizeof(buf), fp) != nullptr) {
-        std::string line{buf}, mac, ip;
+        std::string line{buf};
+        HWAddress mac;
+        IPv4Address ip;
 
         // find mac and ip
         mac = Network_Utils::find_mac(line);
@@ -120,7 +122,7 @@ bool Host_Monitor::read_cache_file() {
         manufacturer = line.substr(0, line.find('-'));
         line.erase(0, line.find('-') + 1);
 
-        Host temp(mac, ip, hostname, manufacturer);
+        Host temp(HWAddress(mac), IPv4Address(ip), hostname, manufacturer);
         host_cache.push_back(temp);
     }
 

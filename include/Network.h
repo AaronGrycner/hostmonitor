@@ -5,31 +5,25 @@
 #ifndef YOSHIMIWRT_NETWORK_H
 #define YOSHIMIWRT_NETWORK_H
 
-#include <tins/address_range.h>
-#include <tins/network_interface.h>
-#include <tins/ip_address.h>
+#include <boost/asio.hpp>
 
-#include "Definitions.h"
+#include "network_interface.h"
 
 // class containing network information
 
-using namespace Tins;
+using namespace boost::asio::ip;
 
 class Network {
 private:
-    NetworkInterface interface{NetworkInterface::default_interface()};
-    AddressRange<Tins::IPv4Address> range{interface.ipv4_address(), interface.ipv4_mask(), true};
+    network_interface interface;
+    address_v4_range range;
 
 public:
     Network()=default;
 
-    [[nodiscard]] NetworkInterface get_interface() const {
-        return interface;
-    }
+    [[nodiscard]] network_interface get_interface() const { return interface; }
 
-    bool in_range(IPv4Address ip) {
-        return range.contains(ip);
-    }
+    bool in_range(const address_v4 &ip) { return range.find(ip) == range.end(); }
 };
 
 #endif //YOSHIMIWRT_NETWORK_H
